@@ -29,12 +29,15 @@
         .login-box {
             /* Dark, semi-transparent background for readability */
             background-color: rgba(0, 0, 0, 0.8);
-            padding: 40px 30px;
+            padding: 40px 50px;
             border-radius: 12px;
             text-align: center;
             box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
-            max-width: 400px;
-            width: 90%;
+            
+            /* Flex to text length instead of a fixed maximum width */
+            width: fit-content; 
+            max-width: 90%; /* Prevents the box from touching screen edges on mobile */
+            
             border: 1px solid rgba(212, 175, 55, 0.3); /* Subtle gold border */
         }
 
@@ -42,10 +45,12 @@
             margin-top: 0;
             color: #d4af37; /* Gold accent color to match the crest */
             font-weight: 600;
+            font-size: 24px;
+            white-space: nowrap; /* Forces the title to stay on one line on larger screens */
         }
 
         .login-box p {
-            font-size: 14px;
+            font-size: 15px;
             line-height: 1.5;
             margin-bottom: 25px;
             color: #d1d1d1;
@@ -71,6 +76,23 @@
 
         input[type="submit"]:active {
             transform: scale(0.98);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            .login-box {
+                padding: 30px 20px;
+                white-space: normal; /* Allows text to wrap on very small screens */
+            }
+
+            .login-box h2 {
+                font-size: 20px;
+                white-space: normal; /* Removes the single-line force so it doesn't break the screen on small phones */
+            }
+
+            .login-box p {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
