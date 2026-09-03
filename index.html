@@ -20,6 +20,8 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            padding: 0 15px; /* Ensures the box never touches the screen edges on mobile */
+            box-sizing: border-box;
             
             /* Typography */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -29,16 +31,16 @@
         .login-box {
             /* Dark, semi-transparent background for readability */
             background-color: rgba(0, 0, 0, 0.8);
-            padding: 40px 50px;
+            padding: 40px 30px;
             border-radius: 12px;
             text-align: center;
             box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
-            
-            /* Flex to text length instead of a fixed maximum width */
-            width: fit-content; 
-            max-width: 90%; /* Prevents the box from touching screen edges on mobile */
-            
             border: 1px solid rgba(212, 175, 55, 0.3); /* Subtle gold border */
+            
+            /* Updated Sizing to fix the text wrapping */
+            width: 100%;
+            max-width: 550px; /* Wide enough to fit the full title comfortably */
+            box-sizing: border-box;
         }
 
         .login-box h2 {
@@ -46,7 +48,7 @@
             color: #d4af37; /* Gold accent color to match the crest */
             font-weight: 600;
             font-size: 24px;
-            white-space: nowrap; /* Forces the title to stay on one line on larger screens */
+            margin-bottom: 15px;
         }
 
         .login-box p {
@@ -68,6 +70,7 @@
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.1s ease;
             width: 100%;
+            box-sizing: border-box;
         }
 
         input[type="submit"]:hover {
@@ -79,15 +82,13 @@
         }
 
         /* Mobile Responsiveness */
-        @media (max-width: 600px) {
+        @media (max-width: 500px) {
             .login-box {
                 padding: 30px 20px;
-                white-space: normal; /* Allows text to wrap on very small screens */
             }
 
             .login-box h2 {
-                font-size: 20px;
-                white-space: normal; /* Removes the single-line force so it doesn't break the screen on small phones */
+                font-size: 22px; /* Scales down slightly for small phones */
             }
 
             .login-box p {
