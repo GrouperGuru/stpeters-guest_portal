@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. Peter's Guest Wi-Fi</title>
+    <style>
+        body {
+            /* Set the uploaded image as the background */
+            background-image: url('StPetersSchool.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #111; /* Fallback color */
+            
+            /* Center the login box on the screen */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            
+            /* Typography */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+        }
+
+        .login-box {
+            /* Dark, semi-transparent background for readability */
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
+            max-width: 400px;
+            width: 90%;
+            border: 1px solid rgba(212, 175, 55, 0.3); /* Subtle gold border */
+        }
+
+        .login-box h2 {
+            margin-top: 0;
+            color: #d4af37; /* Gold accent color to match the crest */
+            font-weight: 600;
+        }
+
+        .login-box p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            color: #d1d1d1;
+        }
+
+        /* Submit Button Styling */
+        input[type="submit"] {
+            background-color: #d4af37; /* Gold */
+            color: #1a1a1a; /* Dark text for contrast */
+            border: none;
+            padding: 14px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #b5952f;
+        }
+
+        input[type="submit"]:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="login-box">
+        <h2>Welcome to St. Peter's Guest Wi-Fi</h2>
+        <p>By clicking agree, you accept our network terms of service.</p>
+        
+        <form method="POST" action="https://securelogin.arubanetworks.com/swarm.cgi">
+            <input type="hidden" name="cmd" value="authenticate" />
+            <input type="submit" value="I Acknowledge & Connect" />
+        </form>
+    </div>
+
+</body>
+</html>
