@@ -111,9 +111,12 @@
             <li><strong>Termination:</strong> We reserve the right to disconnect any device at any time without notice.</li>
         </ul>
         
-        <form method="POST" action="https://securelogin.arubanetworks.com/swarm.cgi">
+        <!-- Updated form block to bypass the InternalServer block -->
+        <form method="POST" action="https://arubanetworks.com">
             <input type="hidden" name="cmd" value="authenticate" />
-            <input type="submit" value="I Acknowledge & Connect" />
+            <input type="hidden" name="user" value="guest" />
+            <input type="hidden" name="password" value="guest" />
+            <input type="submit" value="I Acknowledge & Connect" style="padding: 10px 20px; font-size: 16px; cursor: pointer;" />
         </form>
     </div>
 
